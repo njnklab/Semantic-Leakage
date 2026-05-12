@@ -1,0 +1,4 @@
+{
+  "OLLAMA_MODEL": "qwen2.5:72b",
+  "OLLAMA_BASE_URL": "http://localhost:11434/v1"
+}

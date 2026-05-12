@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(83, 98, 115, 0.26);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(83, 98, 115, 0.38);
+}
+
+button,
+input,
+select,
+textarea {
+  touch-action: manipulation;
+}
+
+button {
+  user-select: none;
+  -webkit-user-select: none;
+}
