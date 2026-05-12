@@ -1,5 +1,6 @@
 ---
-const normalizedBaseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+const assetVersion = '20260512-2';
+const assetUrl = (path: string) => `${path}?v=${assetVersion}`;
 
 // Dataset metadata
 const datasetMeta: Record<string, { 
@@ -54,7 +55,7 @@ const datasetMeta: Record<string, {
   }
 };
 
-const manuscriptPdfUrl = `${normalizedBaseUrl}pdfs/semantic-leakage.pdf`;
+const manuscriptPdfUrl = assetUrl('pdfs/semantic-leakage.pdf');
 const analysisRepoUrl = 'https://github.com/njnklab/Semantic-Leakage';
 
 // Color scheme for datasets
@@ -399,7 +400,7 @@ const methodSteps = [
     <span class="hdot"><i style="background:#009E73"></i> CueFilter mitigation</span>
   </div>
   <figure class="hero-visual">
-    <img src={`${normalizedBaseUrl}figs/semantic-concept.jpg`} alt="Conceptual diagram showing semantic cues acting as a shortcut from speech audio to depression prediction score." />
+    <img src={assetUrl('figs/semantic-concept.jpg')} alt="Conceptual diagram showing semantic cues acting as a shortcut from speech audio to depression prediction score." />
     <figcaption class="fig-cap">Concept: semantic cues embedded in speech audio can inflate speech-only depression prediction performance if they are not explicitly audited.</figcaption>
   </figure>
   <a href="#summary" class="scroll-arrow"><small>Scroll</small><i></i><span></span></a>
@@ -482,11 +483,11 @@ const methodSteps = [
     </div>
     <div class="figure-grid mt36">
       <figure class="figure-card span2 reveal">
-        <img src={`${normalizedBaseUrl}figs/semantic-cue-distribution.jpg`} alt="Cue distribution across E-DAIC, PDCH, CMDC, and ManDIC, including frequent cue expressions and relationships with scale scores." />
+        <img src={assetUrl('figs/semantic-cue-distribution.jpg')} alt="Cue distribution across E-DAIC, PDCH, CMDC, and ManDIC, including frequent cue expressions and relationships with scale scores." />
         <figcaption class="fig-cap">Verified cue distribution across datasets, speaker roles, and depression scale scores. Patient cues show the clearest severity-related tendency in E-DAIC and ManDIC.</figcaption>
       </figure>
       <figure class="figure-card reveal">
-        <img src={`${normalizedBaseUrl}figs/semantic-dsm5.jpg`} alt="Stacked bar chart showing DSM-5 symptom-domain alignment of verified cues across four datasets." />
+        <img src={assetUrl('figs/semantic-dsm5.jpg')} alt="Stacked bar chart showing DSM-5 symptom-domain alignment of verified cues across four datasets." />
         <figcaption class="fig-cap">DSM-5 alignment of verified cues: 72.2% in E-DAIC, 83.3% in PDCH, 92.2% in CMDC, and 72.7% in ManDIC match major depressive episode symptom domains.</figcaption>
       </figure>
       <div class="metric-tile reveal">
@@ -521,11 +522,11 @@ const methodSteps = [
     </div>
     <div class="figure-grid mt36">
       <figure class="figure-card span2 reveal">
-        <img src={`${normalizedBaseUrl}figs/semantic-agent.jpg`} alt="Cue-Aware Agent pipeline covering audio preprocessing, Agent-ASR, speaker assignment, Agent-CUE, verification, and batch reconstruction." />
+        <img src={assetUrl('figs/semantic-agent.jpg')} alt="Cue-Aware Agent pipeline covering audio preprocessing, Agent-ASR, speaker assignment, Agent-CUE, verification, and batch reconstruction." />
         <figcaption class="fig-cap">Cue-Aware Agent: audio preprocessing, multi-source ASR, speaker assignment, LLM-assisted cue detection, human verification, and batch reconstruction of controlled audio views.</figcaption>
       </figure>
       <figure class="figure-card span2 reveal">
-        <img src={`${normalizedBaseUrl}figs/semantic-cuefilter.jpg`} alt="CueFilter architecture showing context encoding, depthwise and pointwise convolution, cue scoring, soft gate, renormalization, and downstream backbone models." />
+        <img src={assetUrl('figs/semantic-cuefilter.jpg')} alt="CueFilter architecture showing context encoding, depthwise and pointwise convolution, cue scoring, soft gate, renormalization, and downstream backbone models." />
         <figcaption class="fig-cap">CueFilter: a plug-and-play front-end that predicts cue probability from frame-level acoustic features, softly suppresses cue-dominated regions, renormalizes features, and passes the sequence to the unchanged downstream backbone.</figcaption>
       </figure>
     </div>
@@ -564,11 +565,11 @@ const methodSteps = [
     </div>
     <div class="figure-grid mt36">
       <figure class="figure-card reveal">
-        <img src={`${normalizedBaseUrl}figs/semantic-filter-visualization.jpg`} alt="Mel spectrogram comparison of original input, CueFilter, and random-mask conditions." />
+        <img src={assetUrl('figs/semantic-filter-visualization.jpg')} alt="Mel spectrogram comparison of original input, CueFilter, and random-mask conditions." />
         <figcaption class="fig-cap">CueFilter applies localized cue-aware attenuation while preserving surrounding speech structure, unlike a broad random mask.</figcaption>
       </figure>
       <figure class="figure-card reveal">
-        <img src={`${normalizedBaseUrl}figs/semantic-mae.jpg`} alt="Bar charts of original-input MAE for backbone, CueFilter, and reference mask across four datasets." />
+        <img src={assetUrl('figs/semantic-mae.jpg')} alt="Bar charts of original-input MAE for backbone, CueFilter, and reference mask across four datasets." />
         <figcaption class="fig-cap">Original-input MAE cost remains small for CueFilter: +0.009 on E-DAIC, +0.065 on PDCH, +0.015 on CMDC, and +0.032 on ManDIC.</figcaption>
       </figure>
     </div>
