@@ -2,5 +2,5 @@ import { defineConfig } from 'astro/config';
 
 export default defineConfig({
   site: 'https://njnklab.github.io',
-  base: '/semantic-leakage',
+  base: '/Semantic-Leakage',
 });
